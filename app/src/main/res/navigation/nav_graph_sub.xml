@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.deeplinkerrorsample.SubStartFragment"
+        android:label="DeepLinkedFragment" />
+
+    <fragment
+        android:id="@+id/deepLinkedFragment"
+        android:name="com.deeplinkerrorsample.DeepLinkedFragment"
+        android:label="DeepLinkedFragment">
+        <argument
+            android:name="name"
+            android:defaultValue="no deeplink value found"
+            app:argType="string" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="www.example.com/user/{name}" />
+    </fragment>
+</navigation>
